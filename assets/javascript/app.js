@@ -1,222 +1,120 @@
-var startScreen;
-var gameHTML;
-var counter =  30;
-var question = [];
-var answer = [];
-var image = [];
-var correctAnswers = [];
-var questionCounter = 0;
-var selectAnswer;
-var clock;
-var correct = 0;
-var incorrectAnswer = 0;
-var unansweredAnswer = 0;
-// var click sound = source file
+$(document).ready(function () {
+    // Function that creates the start button and initial screen
 
-// Create function to start the initial screen
-// $(document).ready(function() {
-//     function initialScreen() {
-//         startScreen = <p tag with classes>Button;
-//         $(".mainArea).html(startScreen);
-//     }
-//  
-
-// create function, generateHTML triggered by start button
-// //* I know you won't know this code, so here it is for you
-// $("body").on("click", ".start-button", function(event){
-//     event.preventDefault();
-//     clickSound.play();
-//     generateHTML();
-
-//     timeWrapper();
-// });
-
-// create function, answered question as true, alert with right answer, else wrong answer
-// $("body").on("click", ".answer", function(event) {
-//     clickSound.play();
-//     selectedAnswer = $(this).text();
-//     if(selectedAnswer === correctAnswers[questionCounter]) {
-//         clearInterval(clock);
-//         generateWin();
-//     }
-//     else {
-//         clearInterval(clock);
-//         generateLoss();
-//     }
-// });
-
-// $("body").on("click", ".reset-button", function(event){
-//     clickSound.play();
-//     resetGame();
-// });
-//  });
-// //*  
-
-$(document.ready(function() {
     function initialScreen() {
-        startScreen = <p></p>   // HTML code goes here
+        startScreen = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start Quiz</a></p>";
         $(".mainArea").html(startScreen);
     }
+
     initialScreen();
 
-    function generateHTML() {
-        $("body").on("click", ".start-button", function(event) {
-            event.preventDetault();
-            clickSound.play();
-            generateHTML();
-            
-            timeWrapper();
-        });
-    }
-    function answeredQuestion() {
-        $("body").on("click", ".answer", function(event){
-            clickSound.play();
-            selectAnswer = $(this).text();
-            if(selectAnswer === correctAnswers[questionCounter]) {
-                clearInterval(clock);
-                generateWin(); // need to create this function
-            }
-            else {
-                clearInterval(clock);
-                generateLoss(); // need to create this function
-            }
-        });
-    }
-    $("body").on("click", ".reset-button", function(event) {
+    // Function to generate HTML  that triggers the start button and generates the HTML
+
+    $("body").on("click", ".start-button", function (event) {
+        event.preventDetault();
         clickSound.play();
-        resetGame(); // need to create this function
-    });
-}));
+        generateHTML();
 
-// function to generateloss due to timeout
-//     unanswered questions plus plus
-//     gameHTML = <p tag with classes>time remaining <spans> + counter + <span>
-//     <p tag with classes> span You run out of time: + correct answer [with question counter inside brackets] +
-//     <p tag with classes> with image source file 
-//     $ id tag with .main Area .html with (gameHTML inside parenthesis)
-//     set timeout (wait, 4000)
+        timerWrapper();
 
-    function generateLossToTimeOut() {
-        unansweredQuestion++;
-        gameHTML = "<p>Time remaining: </p> <span>" + counter "</span>" + "<p>You've run out of time: </p>" + correctAnswers[questionCounter] + "<p>//image source file"
-        $(".mainArea").html(gameHTML);
-        setTimeout (wait, 4000);
-    };
-    
-    // function to generate win
-    //     correct answer plus plus
-    //     gameHTML = <p tag with classes> time remaining inside span + counter +
-    //     <p tag with classes> The correct answer is + correct answer var with [question counter inside brackets] +
-    //     <image array with [question counter inside brackets];
+    }); // Closes start-button click
 
-    function generateWin() {
-        correct++;
-        gameHTML = "<p>Time remaining: </p> <span>" + counter "</span>" + "<p>The correct answer is: </p>" + correctAnswers[questionCounter] + "<p>//image source file"
-    };
+    $("body").on("click", ".answer", function (event) {
+        // AnsweredQuestion = true;
+        clickSound.play();
+        selectedAnswer = $(this).text();
+        if (selectedAnswer === correctAnswersArray[questionCounter]) {
+            // alert("correct");
 
-    // function to generate loss
-    //     incorrect answer plus plus
-    //     gameHTML = "<p tag with classes, time remaining + counter variable inside span tag +
-    //     <p tag with classes + correct answers [question counter inside brackets] +
-    //     <p tag with classes + <img tag with wrong answer
-    //     Id tag with .mainArea and .html with (gameHTML inside parenthesis)
-    //     setTimeout(wait, 4000); //* you can change this information to a different amount
-
-    function generateLoss() {
-        incorrectAnswer++;
-        gameHTML = "<p>Time remaining: </p> <span>" + counter "</span>" + "<p>Correct answers: </p>" + correctAnswers[questionCounter] + "<p>//image source file"
-        $(".mainArea").html(gameHTML);
-        setTimeout(wait, 4000);
-    };
-
-    // function to generate html
-    //     gameHTML = '<p> tag with classes and span, add counter inside the span, plus <p> tag with class plus question array [with question counter inside brackets] var, 
-    //     plus wrong answer var, plus answer array with [question counter inside brackets][identify the position of the answer with the index number] continue showing 
-    //     all the answers for all the arrays
-    //     add in with id selector mainarea id and .html after parenthesis with gameHTML inside parenthesis
-
-    function generateHTML() {
-        gameHTML = "<p>Time remaining: </p> <span>" + counter "</span>" + "<p>Correct answers: </p>" + question[questionCounter] + wrongAnswer + answer[0]"<p>//image source file</p>"
-        $(".mainArea").html(gameHTML);
-    };
-
-    // function wait
-    //     if statement with (questioncounter variable less than < 7) {
-    //         questioncounter plus plus
-    //         generteHTML function
-    //         counter set to 30
-    //         timwrapper function
-    //     }
-    //     else {
-    //         final screen function 
-    //     }
-    //     }
-
-    function wait() {
-        if(questionCounter < 7) {
-            questionCounter++;
-            generateHTML();
-            counter = 30;
-            timeWrapper();
+            clearInterval(clock);
+            generateWin();
         }
         else {
-            finalScreen();
+            // alert("wrong answer!");
+            clearInterval(clock);
+            generateLoss();
         }
-    };
+    }); // Close .answer click
 
-    // function timeWrapper
-    //     the clock variable = setInterval(thirtySeconds, 1000);
-    //     function thirtySeconds() {
-    //         if (counter var equals to 0) {
-    //             clearInterval(the clock variable);
-    //             generateloss due to timeout function
-    //         }
-    //         if(counter var > 0) {
-    //             counter minus minus
-    //         }
-    //         $ timer id with .html and counter var inside parenthesis
-    //     }
+    $("body").on("click", ".reset-button", function (event) {
+        clickSound.play();
+        resetGame();
+    }); // Closes reset function
 
-    function timeWrapper() {
-        clock = setInterval(thirtySeconds, 1000);
-        function thirtySeconds() {
-            if (counter = 0) {
-                clearInterval(clock);
-                generateLossToTimeOut();
-            }
-            if (counter > 0) {
-                counter--;
-            }
-            $(".timer").html(counter);
-        }
-    };
+}); // Closes JQuery wrapper
 
-    function finalScreen() {
-        gameHTML = "<p><span>" + counter "</span>""<p><span>" + correct + wrongAnswer + unansweredAnswer "</p>"
+function generateLossDueToTimeOut() {
+    unansweredAnswer++;
+    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+    $(".mainArea").html(gameHTML);
+    setTimeout(wait, 4000);
+}
+function generateWin() {
+    correctAnswer++;
+    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswersArray[questionCounter] + "</p>" + imageArray[questionCounter];
+    $(".mainArea").html(gameHTML);
+    setTimeout(wait, 4000);
+}
+function generateLoss() {
+    incorrectAnswer++;
+    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: " + correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+    $(".mainArea").html(gameHTML);
+    setTimeout(wait, 4000);
+}
+function generateHTML() {
+    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0]; + "</p><p class='answer'>B. " + answerArray[questionCounter][1]; + "</p><p class='answer'>C. " + answerArray[questionCounter][2]; + "</p><p class='answer'>D. " + answerArray[questionCounter][3]; + "</p>";
+    $(".mainArea").html(gameHTML);
+}
+function wait() {
+    if (questionCounter < 7) {
+        questionCounter++;
+        generateHTML();
+        counter = 30;
+        timerWrapper();
     }
+    else {
+        finalScreen();
+    }
+}
+function timeWrapper() {
+    clock = setInterval(thirtySeconds, 1000);
+    function thirtySeconds() {
+        if (counter === 0) {
+            clearInterval(clock);
+            generateLossDueToTimeOut();
+        }
+        if (counter > 0) {
+            counter--;
+        }
+        $(".timer").html(counter);
+    }
+}
+function finalScreen() {
+    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>All done, here's how you did!" + "</p>" + "</p><p class='summary-correct'>Correct Answers: " + correctAnswer + "</p>" + "<p>Wrong Answers: " + incorrectAnswer; + "</p>" + "<p>Unanswered: " + unansweredAnswer; + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'>Reset The Quiz!</a></p>";
+    $(".mainArea").html(gameHTML);
+}
 
+function resetGame() {
+    questionCounter = 0;
+    correctAnswer = 0;
+    incorrectAnswer = 0;
+    unansweredAnswer = 0;
+    counter = 30;
+    generateHTML();
+    timeWrapper();
+}
 
-
-// function final screen
-//     gameHTML = '<p> tag with classes and span, add counter inside the span, plus <p> tag with class plus correct ansewer var, plus wrong answer var, plus unanswered var 
-//     add in with id selector main id and .html after parenthesis with gameHTML inside parenthesis
-
-// function reset game 
-//     questioncounter set to 0
-//     correct answer set to 0
-//     incorrect answer set to 0
-//     unanswered question set to 0
-//     generateHTML function()
-//     timeWrapper function()
-
-
-
-// time from class
-
-// const timers = {
-//     counter: function() {
-//         setInterval(...function() {
-//             console.log(this.time);
-//         });
-//     }
-// }
+var startScreen;
+var gameHTML;
+var questionArray = [];
+var answerArray = [];
+var correctAnswersArray = [];
+var imageArray = [];
+var questionCounter = 0;
+var counter = 30;
+var selectAnswer;
+var clock;
+var correctAnswer = 0;
+var incorrectAnswer = 0;
+var unansweredAnswer = 0;
+// var click sound = source file 
