@@ -1,3 +1,19 @@
+var startScreen;
+var gameHTML;
+var questionArray = ["Rap was just becoming well known in the 90s. Which artist had the first number one rap single?", "Novelty children shows were also a big hit. Which 90s TV show features characters with the name Tommy, Zack, Kimberly, Billy, and Trini?", "Which famous girl group of the 90s sung the theme song to the hit sketch comedy TV show 'All That'?", "Which record company had huge success in the 90s with artists such as the Notorious BIG, Mase, and Total?", "Teenybopper pop was big in the late 90s. Which teen pop idol was NOT in the 'Mickey Mouse Club'?", "'Clueless' was a cult hit in the 90s. Which cast member of 'Clueless' was NOT featured in the 'Clueless' TV series?", "What year was JonBenet Ramsey murdered?", "Which NBA team did NOT win a championship in the 90s?", "What group had the hit wonder in the 90s by the name of 'Lovefool'?", "These two best friends came together to write the Oscar winning movie, 'Good Will Hunting'?"];
+var answerArray = [["Kriss Kross","MC Hammer","Vanilla Ice","DJ Jazzy Jeff and the Fresh Prince"],["Saved By the Bell","The Mighty Morphin Power Rangers","Beverly Hills 90210","All That"],["TLC","Envogue","Destiny's Child","3LW"],["Motown", "Death Row", "Murder Inc.","Bad Boy"],["Jessica Simpson","JC Chasez","Britney Spears","Justin Timberlake"],["Stacey Dash","Elisa Donovan","Donald Faison","Alicia Silverstone"],["1995","1996","1998","1997"],["Los Angeles Lakers","Detroit Pistons","Houston Rockets","San Antonio Spurs"],["The Corrs","Chumbawumba","Was Not Was","The Cardigans"],["Ben Stiller and Owen Wilson","Ben Affleck and Matt Damon","Jim Carey and Will Smith","Demi Moore and Bruce Willis"]];
+var correctAnswersArray = [];
+var imageArray = [];
+var questionCounter = 0;
+var counter = 30;
+var selectAnswer;
+var clock;
+var correctAnswer = 0;
+var incorrectAnswer = 0;
+var unansweredAnswer = 0;
+var clickSound = new Audio("https://github.com/efrencav/TriviaGame/blob/master/assets/sound/button-click.mp3"); 
+
+
 $(document).ready(function () {
     // Function that creates the start button and initial screen
 
@@ -12,7 +28,7 @@ $(document).ready(function () {
 
     $("body").on("click", ".start-button", function (event) {
         event.preventDefault();
-        clickSound.play();
+        clickSound.play;
         generateHTML();
 
         timerWrapper();
@@ -21,7 +37,7 @@ $(document).ready(function () {
 
     $("body").on("click", ".answer", function (event) {
         // AnsweredQuestion = true;
-        clickSound.play();
+        clickSound.play;
         selectedAnswer = $(this).text();
         if (selectedAnswer === correctAnswersArray[questionCounter]) {
             // alert("correct");
@@ -104,17 +120,3 @@ function resetGame() {
     timeWrapper();
 }
 
-var startScreen;
-var gameHTML;
-var questionArray = ["Rap was just becoming well known in the 90s. Which artist had the first number one rap single?", "Novelty children shows were also a big hit. Which 90s TV show features characters with the name Tommy, Zack, Kimberly, Billy, and Trini?", "Which famous girl group of the 90s sung the theme song to the hit sketch comedy TV show 'All That'?", "Which record company had huge success in the 90s with artists such as the Notorious BIG, Mase, and Total?", "Teenybopper pop was big in the late 90s. Which teen pop idol was NOT in the 'Mickey Mouse Club'?", "'Clueless' was a cult hit in the 90s. Which cast member of 'Clueless' was NOT featured in the 'Clueless' TV series?", "What year was JonBenet Ramsey murdered?", "Which NBA team did NOT win a championship in the 90s?", "What group had the hit wonder in the 90s by the name of 'Lovefool'?", "These two best friends came together to write the Oscar winning movie, 'Good Will Hunting'?"];
-var answerArray = [["Kriss Kross","MC Hammer","Vanilla Ice","DJ Jazzy Jeff and the Fresh Prince"]["Saved By the Bell","The Mighty Morphin Power Rangers","Beverly Hills 90210", "All That"]["TLC","Envogue","Destiny's Child","3LW"]["Motown", "Death Row", "Murder Inc.","Bad Boy"]["Jessica Simpson","JC Chasez","Britney Spears","Justin Timberlake"]["Stacey Dash","Elisa Donovan","Donald Faison","Alicia Silverstone"]["1995","1996","1998","1997"]["Los Angeles Lakers","Detroit Pistons","Houston Rockets","San Antonio Spurs"]["The Corrs","Chumbawumba","Was Not Was","The Cardigans"]["Ben Stiller and Owen Wilson","Ben Affleck and Matt Damon","Jim Carey and Will Smith","Demi Moore and Bruce Willis"]];
-var correctAnswersArray = [];
-var imageArray = [];
-var questionCounter = 0;
-var counter = 30;
-var selectAnswer;
-var clock;
-var correctAnswer = 0;
-var incorrectAnswer = 0;
-var unansweredAnswer = 0;
-var clickSound = new Audio("https://github.com/efrencav/TriviaGame/blob/master/assets/sound/button-click.mp3"); 
