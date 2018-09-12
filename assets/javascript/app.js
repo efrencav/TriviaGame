@@ -62,7 +62,7 @@ function generateLoss() {
     setTimeout(wait, 4000);
 }
 function generateHTML() {
-    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0]; + "</p><p class='answer'>B. " + answerArray[questionCounter][1]; + "</p><p class='answer'>C. " + answerArray[questionCounter][2]; + "</p><p class='answer'>D. " + answerArray[questionCounter][3]; + "</p>";
+    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. " + answerArray[questionCounter][1] + "</p><p class='answer'>C. " + answerArray[questionCounter][2] + "</p><p class='answer'>D. " + answerArray[questionCounter][3] + "</p>";
     $(".mainArea").html(gameHTML);
 }
 function wait() {
@@ -106,7 +106,7 @@ function resetGame() {
 
 var startScreen;
 var gameHTML;
-var questionArray = [];
+var questionArray = ["Rap was just becoming well known in the 90s. Which artist had the first number one rap single?", "Novelty children shows were also a big hit. Which 90s TV show features characters with the name Tommy, Zack, Kimberly, Billy, and Trini?", "Which famous girl group of the 90s sung the theme song to the hit sketch comedy TV show 'All That'?", "Which record company had huge success in the 90s with artists such as the Notorious BIG, Mase, and Total?", "Teenybopper pop was big in the late 90s. Which teen pop idol was NOT in the 'Mickey Mouse Club'?", "'Clueless' was a cult hit in the 90s. Which cast member of 'Clueless' was NOT featured in the 'Clueless' TV series?", "What year was JonBenet Ramsey murdered?", "Which NBA team did NOT win a championship in the 90s?", "What group had the hit wonder in the 90s by the name of 'Lovefool'?", "These two best friends came together to write the Oscar winning movie, 'Good Will Hunting'?"];
 var answerArray = [];
 var correctAnswersArray = [];
 var imageArray = [];
@@ -117,4 +117,4 @@ var clock;
 var correctAnswer = 0;
 var incorrectAnswer = 0;
 var unansweredAnswer = 0;
-var clickSound = new Audio("../sound/button-click.mp3"); 
+var clickSound = new Audio("https://github.com/efrencav/TriviaGame/blob/master/assets/sound/button-click.mp3"); 
