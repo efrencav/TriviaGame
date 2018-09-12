@@ -11,7 +11,7 @@ $(document).ready(function () {
     // Function to generate HTML  that triggers the start button and generates the HTML
 
     $("body").on("click", ".start-button", function (event) {
-        event.preventDetault();
+        event.preventDefault();
         clickSound.play();
         generateHTML();
 
@@ -117,4 +117,4 @@ var clock;
 var correctAnswer = 0;
 var incorrectAnswer = 0;
 var unansweredAnswer = 0;
-// var click sound = source file 
+var clickSound = new Audio("../sound/button-click.mp3"); 
