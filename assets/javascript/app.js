@@ -45,7 +45,7 @@ $(document).ready(function () {
 
 function generateLossDueToTimeOut() {
     unansweredAnswer++;
-    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='../images/x.png'>";
     $(".mainArea").html(gameHTML);
     setTimeout(wait, 4000);
 }
@@ -57,7 +57,7 @@ function generateWin() {
 }
 function generateLoss() {
     incorrectAnswer++;
-    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: " + correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: " + correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='../images/x.png'>";
     $(".mainArea").html(gameHTML);
     setTimeout(wait, 4000);
 }
@@ -107,7 +107,7 @@ function resetGame() {
 var startScreen;
 var gameHTML;
 var questionArray = ["Rap was just becoming well known in the 90s. Which artist had the first number one rap single?", "Novelty children shows were also a big hit. Which 90s TV show features characters with the name Tommy, Zack, Kimberly, Billy, and Trini?", "Which famous girl group of the 90s sung the theme song to the hit sketch comedy TV show 'All That'?", "Which record company had huge success in the 90s with artists such as the Notorious BIG, Mase, and Total?", "Teenybopper pop was big in the late 90s. Which teen pop idol was NOT in the 'Mickey Mouse Club'?", "'Clueless' was a cult hit in the 90s. Which cast member of 'Clueless' was NOT featured in the 'Clueless' TV series?", "What year was JonBenet Ramsey murdered?", "Which NBA team did NOT win a championship in the 90s?", "What group had the hit wonder in the 90s by the name of 'Lovefool'?", "These two best friends came together to write the Oscar winning movie, 'Good Will Hunting'?"];
-var answerArray = [];
+var answerArray = [["Kriss Kross","MC Hammer","Vanilla Ice","DJ Jazzy Jeff and the Fresh Prince"]["Saved By the Bell","The Mighty Morphin Power Rangers","Beverly Hills 90210", "All That"]["TLC","Envogue","Destiny's Child","3LW"]["Motown", "Death Row", "Murder Inc.","Bad Boy"]["Jessica Simpson","JC Chasez","Britney Spears","Justin Timberlake"]["Stacey Dash","Elisa Donovan","Donald Faison","Alicia Silverstone"]["1995","1996","1998","1997"]["Los Angeles Lakers","Detroit Pistons","Houston Rockets","San Antonio Spurs"]["The Corrs","Chumbawumba","Was Not Was","The Cardigans"]["Ben Stiller and Owen Wilson","Ben Affleck and Matt Damon","Jim Carey and Will Smith","Demi Moore and Bruce Willis"]];
 var correctAnswersArray = [];
 var imageArray = [];
 var questionCounter = 0;
