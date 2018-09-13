@@ -23,7 +23,7 @@ body {
 }
 
 .answer:hover {
-  background: red;
+  background:#f05444; ;
 }
 .answer {
   padding-top: 7px;
@@ -36,6 +36,9 @@ body {
 
 .img-wrong {
   margin-top: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .first-answer { 
@@ -88,8 +91,46 @@ h6 {font-size:20px; line-height:26px;}
 .bg-green {background-color: #469700;}
 .bg-outter-shadow {box-shadow: inset 0 0 15rem rgba(0, 0, 0, .75);}
 .bg-spiral {
-  background-image: url("../images/spiral-bg.png");
+  background-image: url("../images/spiral-bg-2560x1440.png");
   background-repeat: no-repeat;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  background-image: url("../images/spiral-bg-320x568.png");
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  background-image: url("../images/spiral-bg-325x667.png");
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  background-image: url("../images/spiral-bg-1440x900.png");
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  background-image: url("../images/spiral-bg-1680x1050.png");
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  background-image: url("../images/spiral-bg-2560x1440.png");
+}
+
+
+
+.play-btn {
+  background-image: url("../images/play-button.png");
+  background-repeat: no-repeat;
+  height: 116px;
+  width: 228px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -112,34 +153,14 @@ h6 {font-size:20px; line-height:26px;}
 }
 
 /* Logo */
-.logoHorizontal {background-image: url("../images/intro-logo.png");
+.logoHorizontal {background-image: url("../images/intro-logo-300x120.png");
   background-repeat: no-repeat;
-  height: 138px;
-  width: 575px;
+  height: 120px;
+  width: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-#bgRepeat {background-image: url("http://www.efren-cavazos.com/unit-4-game/assets/images/bg-repeat.png");
-background-repeat: repeat-x;
-height: 200px;
-width: 1000px;
-display: block;
-margin-left: auto;
-margin-right: auto;
-margin-top: 70px;
-}
-
-#title {background-image: url("http://www.efren-cavazos.com/unit-4-game/assets/images/title.png");
-  background-repeat: no-repeat;
-  height:144px;
-  width: auto 0;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 70px;
-}  
+} 
 
 .floatLeft {float: left;}
 .floatRight {float: right;}

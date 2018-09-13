@@ -1,8 +1,8 @@
 var startScreen;
 var gameHTML;
 var questionArray = ["Rap was just becoming well known in the 90s. Which artist had the first number one rap single?", "Novelty children shows were also a big hit. Which 90s TV show features characters with the name Tommy, Zack, Kimberly, Billy, and Trini?", "Which famous girl group of the 90s sung the theme song to the hit sketch comedy TV show 'All That'?", "Which record company had huge success in the 90s with artists such as the Notorious BIG, Mase, and Total?", "Teenybopper pop was big in the late 90s. Which teen pop idol was NOT in the 'Mickey Mouse Club'?", "'Clueless' was a cult hit in the 90s. Which cast member of 'Clueless' was NOT featured in the 'Clueless' TV series?", "What year was JonBenet Ramsey murdered?", "Which NBA team did NOT win a championship in the 90s?", "What group had the hit wonder in the 90s by the name of 'Lovefool'?", "These two best friends came together to write the Oscar winning movie, 'Good Will Hunting'?"];
-var answerArray = [["Kriss Kross","MC Hammer","Vanilla Ice","DJ Jazzy Jeff and the Fresh Prince"],["Saved By the Bell","The Mighty Morphin Power Rangers","Beverly Hills 90210","All That"],["TLC","Envogue","Destiny's Child","3LW"],["Motown", "Death Row", "Murder Inc.","Bad Boy"],["Jessica Simpson","JC Chasez","Britney Spears","Justin Timberlake"],["Stacey Dash","Elisa Donovan","Donald Faison","Alicia Silverstone"],["1995","1996","1998","1997"],["Los Angeles Lakers","Detroit Pistons","Houston Rockets","San Antonio Spurs"],["The Corrs","Chumbawumba","Was Not Was","The Cardigans"],["Ben Stiller and Owen Wilson","Ben Affleck and Matt Damon","Jim Carey and Will Smith","Demi Moore and Bruce Willis"]];
-var correctAnswersArray = ["Vanilla Ice <br /> There were many popular rap hit throughout the early nineties.","The Mighty Morphin Power Rangers", "TLC", "Bad Boy", "Jessica Simpson", "Alicia Silverstone", "1997", "Detroit Pistons", "The Cardigans","Ben Affleck and Matt Damon", "'Screw you guys...I'm going home.'","28 Days","Whitney Houston","The Little Mermaid","Billy Ray Cyrus"];
+var answerArray = [["Kriss Kross", "MC Hammer", "Vanilla Ice", "DJ Jazzy Jeff and the Fresh Prince"], ["Saved By the Bell", "The Mighty Morphin Power Rangers", "Beverly Hills 90210", "All That"], ["TLC", "Envogue", "Destiny's Child", "3LW"], ["Motown", "Death Row", "Murder Inc.", "Bad Boy"], ["Jessica Simpson", "JC Chasez", "Britney Spears", "Justin Timberlake"], ["Stacey Dash", "Elisa Donovan", "Donald Faison", "Alicia Silverstone"], ["1995", "1996", "1998", "1997"], ["Los Angeles Lakers", "Detroit Pistons", "Houston Rockets", "San Antonio Spurs"], ["The Corrs", "Chumbawumba", "Was Not Was", "The Cardigans"], ["Ben Stiller and Owen Wilson", "Ben Affleck and Matt Damon", "Jim Carey and Will Smith", "Demi Moore and Bruce Willis"]];
+var correctAnswersArray = ["C. Vanilla Ice <br/> There were many popular rap hit throughout the early nineties.", "B. The Mighty Morphin Power Rangers <br/> Tommy was the green and white ranger, Zack was the black ranger, Kimberly was the pink ranger, Billy was the blue ranger, and Trini (which later became Alicia) was the yellow ranger.", "A. TLC <br/> The theme song stayed with the show until the 2001-present season.", "D. Bad Boy <br/> Bad Boy records was founded by Sean 'Puffy/P.Diddy/Puff Daddy' Combs. Other Bad Boy artists included Lil' Kim, Junior Mafia, Harlem World, Craig Mack, 112, Faith Evans, Carl Thomas, Loon, and the Lox.", "A. Jessica Simpson <br/> Jessica Simpson tried out for the 'Mickey Mouse Club' and had good chances of being chosen but during her audition, she had stage fright.", "D. Alicia Silverstone <br/> Alicia Silverstone did not decide to join the cast of the 'Clueless' TV series but instead, Rachael Blanchard. Alicia Silverstone went on to star in 'Excess Baggage' and 'Batman and Robin'.", "D. 1997 <br/> JonBenet was mysteriously murdered in her home in late December. Fingers were pointed to her parents but as of 2004, her murder has not been solved.", "B. Detroit Pistons <br/> The Detroit Pistons won in 1990. The Houston Rockets won in 1994 and 1995. The San Antonio Spurs won in 1999. All the other championships won in the 90s were by the Chicago Bulls.", "The Cardigans <br/> 'Lovefool' was featured in the hit movie 'Romeo & Juliet' starring Leonardo DiCaprio and Claire Danes.", "Ben Affleck and Matt Damon <br/> Ben Affleck and MAtt Damon also starred in 'Good Will Hunting'", "'Screw you guys...I'/m going home. <br/> When Kyle plays with his little brother Ike, they play a game called Kick the Baby.", "28 Days <br/> '28 Days' starred Sandra Bullock", "Whitney Houston <br/> Whitney Houston'/s edition of the 'Star Spangled Banner' is one of the most popular renditions of the song.", "The Little Mermaid <br/> 'The Little Mermaid' debuted in 1989.", "Billy Ray Cyrus <br/> Billy Ray Cyrus had great success with his song 'Achy Breaky Heart.' He starred in the PAX TV series 'Doc'."];
 var imageArray = [];
 var questionCounter = 0;
 var counter = 30;
@@ -11,33 +11,25 @@ var clock;
 var correctAnswer = 0;
 var incorrectAnswer = 0;
 var unansweredAnswer = 0;
-var clickSound = new Audio("https://github.com/efrencav/TriviaGame/blob/master/assets/sound/button-click.mp3"); 
+var clickSound = new Audio("sound/button-click.mp3");
 
 
 $(document).ready(function () {
     // Function that creates the start button and initial screen
 
     function initialScreen() {
-        startScreen = "<p class='text-center main-button-container'><a class='btn btn-large btn-primary start-button' href='#' role='button'>Start Quiz</a></p>";
+        startScreen = "<div class='logo'></div><p class='text-center main-button-container'><div class='play-btn start-button' href='#' role='button'></div></p>";
         $(".mainArea").html(startScreen);
     }
 
     initialScreen();
 
-    function initiaLogo() {
-        logoScreen = "<div class='logo'></div>"
-
-        $(".logoArea").html(logoScreen);
-    }
-
-    initiaLogo();
-    
 
     // Function to generate HTML  that triggers the start button and generates the HTML
 
     $("body").on("click", ".start-button", function (event) {
         event.preventDefault();
-        clickSound.play;
+        clickSound.play();
         generateHTML();
 
         timeWrapper();
@@ -46,7 +38,7 @@ $(document).ready(function () {
 
     $("body").on("click", ".answer", function (event) {
         // AnsweredQuestion = true;
-        clickSound.play;
+        clickSound.play();
         selectedAnswer = $(this).text();
         if (selectedAnswer === correctAnswersArray[questionCounter]) {
             // alert("correct");
@@ -70,39 +62,35 @@ $(document).ready(function () {
 
 function generateLossDueToTimeOut() {
     unansweredAnswer++;
-    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" +
-        counter + "</span></p>" + "<p class='text-center'>You ran out of time!<br />  The correct answer was:<br />" +
+    gameHTML = "<div class='logo'><h2 class='text-center timer-p'>Time Remaining: <span class='timer'>" +
+        counter + "</span></h2>" + "<p class='text-center'>You ran out of time!<br />  The correct answer was:<br />" +
         correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='assets/images/x.png'>";
     $(".mainArea").html(gameHTML);
     setTimeout(wait, 4000);
 }
 function generateWin() {
     correctAnswer++;
-    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" +
+    gameHTML = "<div class='logo'><h2 class='text-center timer-p'>Time Remaining: <span class='timer'>" +
         counter + "</span></p>" + "<p class='text-center'>Correct!<br />  The answer is:</br> " +
         correctAnswersArray[questionCounter] + "</p>" + imageArray[questionCounter];
     $(".mainArea").html(gameHTML);
     setTimeout(wait, 4000);
 }
+// Wrong answer
 function generateLoss() {
     incorrectAnswer++;
-    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" +
-        counter + "</span></p>" + "<p class='text-center'><span class='h1 text-large text-orange'>Wrong!</span><br /> The correct answer is: " +
+    gameHTML = "<div class='logo'><h2 class='text-center timer-p'>Time Remaining:<br/> <span class='timer'>" +
+        counter + "</span></h2>" + "<p class='text-center'><span class='text-large text-orange'>Wrong!</span><br /> The correct answer is: " +
         correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='assets/images/x.png'>";
     $(".mainArea").html(gameHTML);
     setTimeout(wait, 4000);
 }
 function generateHTML() {
-    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" +
-        questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " +
-        answerArray[questionCounter][0] + "</p><p class='answer'>B. " +
-        answerArray[questionCounter][1] + "</p><p class='answer'>C. " +
-        answerArray[questionCounter][2] + "</p><p class='answer'>D. " +
-        answerArray[questionCounter][3] + "</p>";
+    gameHTML = "<div class='logo'><p class='logo'><p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. " + answerArray[questionCounter][1] + "</p><p class='answer'>C. " + answerArray[questionCounter][2] + "</p><p class='answer'>D. " + answerArray[questionCounter][3] + "</p>";
     $(".mainArea").html(gameHTML);
 }
 function wait() {
-    if (questionCounter < 7) {
+    if (questionCounter < 15) {
         questionCounter++;
         generateHTML();
         counter = 30;
@@ -126,11 +114,11 @@ function timeWrapper() {
     }
 }
 function finalScreen() {
-    gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" +
+    gameHTML = "<div class='logo'></div><p class='text-center timer-p'>Time Remaining: <span class='timer'>" +
         counter + "</span></p>" + "<p class='text-center'>All done, here's how you did!" +
-        "</p>" + "</p><p class='summary-correct'>Correct Answers: " + correctAnswer +
+        "</p>" + "</p><p class='summary-correct text-center'>Correct Answers: " + correctAnswer +
         "</p>" + "<p>Wrong Answers: " + incorrectAnswer; + "</p>" + "<p>Unanswered: " +
-        unansweredAnswer; + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'>Reset The Quiz!</a></p>";
+            unansweredAnswer; + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'>Reset The Quiz!</a></p>";
     $(".mainArea").html(gameHTML);
 }
 
