@@ -17,19 +17,20 @@ var clickSound = new Audio("https://github.com/efrencav/TriviaGame/blob/master/a
 $(document).ready(function () {
     // Function that creates the start button and initial screen
 
-    function initialScreen1() {
+    function initialScreen() {
         startScreen = "<p class='text-center main-button-container'><a class='btn btn-large btn-primary start-button' href='#' role='button'>Start Quiz</a></p>";
         $(".mainArea").html(startScreen);
     }
 
-    initialScreen1();
+    initialScreen();
 
-    function initialScreen2() {
-        logoScreen = "<p class='logo'></p>";
+    function initiaLogo() {
+        logoScreen = "<div class='logo'></div>"
+
         $(".logoArea").html(logoScreen);
     }
 
-    initialScreen2();
+    initiaLogo();
     
 
     // Function to generate HTML  that triggers the start button and generates the HTML
