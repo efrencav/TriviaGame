@@ -98,30 +98,6 @@ h6 {font-size:20px; line-height:26px;}
   margin-right: auto;
   width: 100%;
   height: auto;
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  background-image: url("../images/spiral-bg-320x568.png");
-} 
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  background-image: url("../images/spiral-bg-325x667.png");
-} 
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  background-image: url("../images/spiral-bg-1440x900.png");
-} 
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  background-image: url("../images/spiral-bg-1680x1050.png");
-} 
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  background-image: url("../images/spiral-bg-2560x1440.png");
 }
 
 
