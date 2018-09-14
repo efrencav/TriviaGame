@@ -1,22 +1,23 @@
 var startScreen;
 var gameHTML;
 var questionArray = ["<span class='text-black text-large padding-10px-bottom'><strong>Question 1</strong></span><br/><p class='text-medium text-center'>Rap was just becoming well known in the 90s.<br/> Which artist had the first number one rap single?</p>", 
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 2</strong></span><br/><p class='text-medium text-center'>Novelty children shows were also a big hit. Which 90s TV show features characters with the name Tommy, Zack, Kimberly, Billy, and Trini?</p>",
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 3</strong></span><br/><p class='text-medium text-center'>Which famous girl group of the 90s sung the theme song to the hit sketch comedy TV show 'All That'?</p>", 
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 4</strong></span><br/><p class='text-medium text-center'>Which record company had huge success in the 90s with artists such as the Notorious BIG, Mase, and Total?</p>",
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 5</strong></span><br/><p class='text-medium text-center'>Teenybopper pop was big in the late 90s. Which teen pop idol was NOT in the 'Mickey Mouse Club'?</p>", 
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 6</strong></span><br/><p class='text-medium text-center'>'Clueless' was a cult hit in the 90s. Which cast member of 'Clueless' was NOT featured in the 'Clueless' TV series?</p>",
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 7</strong></span><br/><p class='text-medium text-center'>What year was JonBenet Ramsey murdered?", "Which NBA team did NOT win a championship in the 90s?</p>",
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 8</strong></span><br/><p class='text-medium text-center'>Which NBA team did NOT win a championship in the 90s?</p>",  
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 9</strong></span><br/><p class='text-medium text-center'>What group had the hit wonder in the 90s<br/>by the name of 'Lovefool'?</p>", 
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 10</strong></span><br/><p class='text-medium text-center'>These two best friends came together to write the Oscar winning movie, 'Good Will Hunting'?</p>",
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 11</strong></span><br/><p class='text-medium text-center'>Which phrase is a common catchphrase on 'South Park'?</p>",
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 12</strong></span><br/><p class='text-medium text-center'>Which movie did NOT star actor Brad Pitt?</p>",
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 13</strong></span><br/><p class='text-medium text-center'>Who sang the 'Star Spangled Banner' at the Super Bowl XXV?</p>",
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 14</strong></span><br/><p class='text-medium text-center'>The 1990s was a golden age for modern Disney movies. Which Disney Movie did NOT debut in the 90s?</p>",
-                "<span class='text-black text-large padding-10px-bottom'><strong>Question 15</strong></span><br/><p class='text-medium text-center'>Country Music became very big in the 90s. Which country music star had a popular television show on 'PAX TV'?</p>"];
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 2</strong></span><br/><p class='text-medium text-center'>Novelty children shows were also a big hit. Which 90s TV show features characters with the name Tommy, Zack, Kimberly, Billy, and Trini?</p>",
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 3</strong></span><br/><p class='text-medium text-center'>Which famous girl group of the 90s sung the theme song to the hit sketch comedy TV show 'All That'?</p>", 
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 4</strong></span><br/><p class='text-medium text-center'>Which record company had huge success in the 90s with artists such as the Notorious BIG, Mase, and Total?</p>",
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 5</strong></span><br/><p class='text-medium text-center'>Teenybopper pop was big in the late 90s. Which teen pop idol was NOT in the 'Mickey Mouse Club'?</p>", 
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 6</strong></span><br/><p class='text-medium text-center'>'Clueless' was a cult hit in the 90s. Which cast member of 'Clueless' was NOT featured in the 'Clueless' TV series?</p>",
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 7</strong></span><br/><p class='text-medium text-center'>What year was JonBenet Ramsey murdered?", "Which NBA team did NOT win a championship in the 90s?</p>",
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 8</strong></span><br/><p class='text-medium text-center'>Which NBA team did NOT win a championship in the 90s?</p>",  
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 9</strong></span><br/><p class='text-medium text-center'>What group had the hit wonder in the 90s<br/>by the name of 'Lovefool'?</p>", 
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 10</strong></span><br/><p class='text-medium text-center'>These two best friends came together to write the Oscar winning movie, 'Good Will Hunting'?</p>",
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 11</strong></span><br/><p class='text-medium text-center'>Which phrase is a common catchphrase on 'South Park'?</p>",
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 12</strong></span><br/><p class='text-medium text-center'>Which movie did NOT star actor Brad Pitt?</p>",
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 13</strong></span><br/><p class='text-medium text-center'>Who sang the 'Star Spangled Banner' at the Super Bowl XXV?</p>",
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 14</strong></span><br/><p class='text-medium text-center'>The 1990s was a golden age for modern Disney movies. Which Disney Movie did NOT debut in the 90s?</p>",
+                    "<span class='text-black text-large padding-10px-bottom'><strong>Question 15</strong></span><br/><p class='text-medium text-center'>Country Music became very big in the 90s. Which country music star had a popular television show on 'PAX TV'?</p>"];
 
-var answerArray = [["Kriss Kross", "MC Hammer", "Vanilla Ice", "DJ Jazzy Jeff and the Fresh Prince"], 
+var answerArray = [
+                ["Kriss Kross", "MC Hammer", "Vanilla Ice", "DJ Jazzy Jeff and the Fresh Prince"], 
                 ["Saved By the Bell", "The Mighty Morphin Power Rangers", "Beverly Hills 90210", "All That"], 
                 ["TLC", "Envogue", "Destiny's Child", "3LW"], ["Motown", "Death Row", "Murder Inc.", "Bad Boy"], 
                 ["Jessica Simpson", "JC Chasez", "Britney Spears", "Justin Timberlake"], 
@@ -28,23 +29,24 @@ var answerArray = [["Kriss Kross", "MC Hammer", "Vanilla Ice", "DJ Jazzy Jeff an
                 ["28 Days", "Seven Years in Tibet", "Se7en", "Twelve Monkeys"],
                 ["Celine Dion", "Toni Braxton", "Mariah Carey", "Whitney Houston"],
                 ["The Little Mermaid", "The Lion King", "Beauty and the Beast","Tarzan"],
-                ["Shania Twain", "Billy Ray Cyrus", "Garth Brooks", "Faith Hill"]];
+                ["Shania Twain", "Billy Ray Cyrus", "Garth Brooks", "Faith Hill"]
+                ];
 
 var correctAnswersArray = ["<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>C. Vanilla Ice</strong></h3><br/><p class='text-center'>There were many popular rap hit throughout the early nineties.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>B. The Mighty Morphin Power Rangers</strong><br/><p class='text-center'>Tommy was the green and white ranger, Zack was the black ranger, Kimberly was the pink ranger, Billy was the blue ranger, and Trini (which later became Alicia) was the yellow ranger.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. TLC</strong><br/><p class='text-center'>The theme song stayed with the show until the 2001-present season.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>D. Bad Boy</strong><br/><p class='text-center'>Bad Boy records was founded by Sean 'Puffy/P.Diddy/Puff Daddy' Combs. Other Bad Boy artists included Lil' Kim, Junior Mafia, Harlem World, Craig Mack, 112, Faith Evans, Carl Thomas, Loon, and the Lox.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. Jessica Simpson</strong><br/><p class='text-center'>Jessica Simpson tried out for the 'Mickey Mouse Club' and had good chances of being chosen but during her audition, she had stage fright.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>D. Alicia Silverstone</strong><br/><p class='text-center'>Alicia Silverstone did not decide to join the cast of the 'Clueless' TV series but instead, Rachael Blanchard. Alicia Silverstone went on to star in 'Excess Baggage' and 'Batman and Robin'</p>.", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>D. 1997</strong><br/><p class='text-center'>JonBenet was mysteriously murdered in her home in late December. Fingers were pointed to her parents but as of 2004, her murder has not been solved.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>B. Detroit Pistons</strong><br/><p class='text-center'>The Detroit Pistons won in 1990. The Houston Rockets won in 1994 and 1995. The San Antonio Spurs won in 1999. All the other championships won in the 90s were by the Chicago Bulls.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. The Cardigans</strong><br/><p class='text-center'>'Lovefool' was featured in the hit movie 'Romeo & Juliet' starring Leonardo DiCaprio and Claire Danes.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>D. Ben Affleck and Matt Damon</strong><br/><p class='text-center'>Ben Affleck and MAtt Damon also starred in 'Good Will Hunting'.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. 'Screw you guys...I'/m going home.</strong><br/><p class='text-center'>When Kyle plays with his little brother Ike, they play a game called Kick the Baby.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. 28 Days</strong><br/><p class='text-center'>'28 Days' starred Sandra Bullock.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>D. Whitney Houston</strong><br/><p class='text-center'>Whitney Houston'/s edition of the 'Star Spangled Banner' is one of the most popular renditions of the song.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. The Little Mermaid</strong><br/><p class='text-center'>'The Little Mermaid' debuted in 1989.</p>", 
-                "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>B. Billy Ray Cyrus</strong><br/><p class='text-center'>Billy Ray Cyrus had great success with his song 'Achy Breaky Heart.' He starred in the PAX TV series 'Doc'.</p>"];
+                        "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>B. The Mighty Morphin Power Rangers</strong></h3><br/><p class='text-center'>Tommy was the green and white ranger, Zack was the black ranger, Kimberly was the pink ranger, Billy was the blue ranger, and Trini (which later became Alicia) was the yellow ranger.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. TLC</strong></h3><br/><p class='text-center'>The theme song stayed with the show until the 2001-present season.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>D. Bad Boy</strong></h3><br/><p class='text-center'>Bad Boy records was founded by Sean 'Puffy/P.Diddy/Puff Daddy' Combs. Other Bad Boy artists included Lil' Kim, Junior Mafia, Harlem World, Craig Mack, 112, Faith Evans, Carl Thomas, Loon, and the Lox.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. Jessica Simpson</strong></h3><br/><p class='text-center'>Jessica Simpson tried out for the 'Mickey Mouse Club' and had good chances of being chosen but during her audition, she had stage fright.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>D. Alicia Silverstone</strong></h3><br/><p class='text-center'>Alicia Silverstone did not decide to join the cast of the 'Clueless' TV series but instead, Rachael Blanchard. Alicia Silverstone went on to star in 'Excess Baggage' and 'Batman and Robin'</p>.", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>D. 1997</strong></h3><br/><p class='text-center'>JonBenet was mysteriously murdered in her home in late December. Fingers were pointed to her parents but as of 2004, her murder has not been solved.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>B. Detroit Pistons</strong></h3><br/><p class='text-center'>The Detroit Pistons won in 1990. The Houston Rockets won in 1994 and 1995. The San Antonio Spurs won in 1999. All the other championships won in the 90s were by the Chicago Bulls.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. The Cardigans</strong></h3><br/><p class='text-center'>'Lovefool' was featured in the hit movie 'Romeo & Juliet' starring Leonardo DiCaprio and Claire Danes.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>D. Ben Affleck and Matt Damon</strong></h3><br/><p class='text-center'>Ben Affleck and MAtt Damon also starred in 'Good Will Hunting'.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. 'Screw you guys...I'/m going home.</strong></h3><br/><p class='text-center'>When Kyle plays with his little brother Ike, they play a game called Kick the Baby.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. 28 Days</strong></h3><br/><p class='text-center'>'28 Days' starred Sandra Bullock.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>D. Whitney Houston</strong></h3><br/><p class='text-center'>Whitney Houston'/s edition of the 'Star Spangled Banner' is one of the most popular renditions of the song.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>A. The Little Mermaid</strong></h3><br/><p class='text-center'>'The Little Mermaid' debuted in 1989.</p>", 
+                    "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>B. Billy Ray Cyrus</strong></h3><br/><p class='text-center'>Billy Ray Cyrus had great success with his song 'Achy Breaky Heart.' He starred in the PAX TV series 'Doc'.</p>"];
 
 var imageArray = ["<img class='center-block' src='assets/images/vanilla-ice.jpg'>",
                 "<img class='center-block' src='assets/images/The-Rangers-mighty-morphin-power-rangers.jpg'>",
@@ -96,7 +98,7 @@ $(document).ready(function () {
     }); // Closes start-button click
 
     $("body").on("click", ".answer", function (event) {
-        correctAnswersArray = true;
+        // correctAnswersArray = true;
         clickSound.play();
         selectedAnswer = $(this).text();
         if (selectedAnswer === correctAnswersArray[questionCounter]) {
@@ -144,7 +146,7 @@ function generateLoss() {
         correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='assets/images/x.png'>";
         
     $(".mainArea").html(gameHTML);
-    setTimeout(wait, 1000);
+    setTimeout(wait, 4000);
 }
 function generateHTML() {
     gameHTML = "<p class='logo'><p class='text-center timer-p'><span class='text-large text-white'><strong>Time Remaining: <span class='timer text-black'>30</strong></span></p><p class='text-center'>" + 
