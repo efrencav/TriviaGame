@@ -12,6 +12,8 @@ var correctAnswer = 0;
 var incorrectAnswer = 0;
 var unansweredAnswer = 0;
 var clickSound = new Audio("assets/sound/button-click.mp3");
+var SoundRight = new Audio("assets/sound/right-answer.wav");
+var SoundWrong = new Audio("assets/sound/wrong.mp3");
 
 
 $(document).ready(function () {
@@ -37,17 +39,18 @@ $(document).ready(function () {
     }); // Closes start-button click
 
     $("body").on("click", ".answer", function (event) {
-        // AnsweredQuestion = true;
+        correctAnswersArray = true;
         clickSound.play();
         selectedAnswer = $(this).text();
         if (selectedAnswer === correctAnswersArray[questionCounter]) {
             // alert("correct");
-
+            SoundRight.play();
             clearInterval(clock);
             generateWin();
         }
         else {
             // alert("wrong answer!");
+            SoundWrong.play();
             clearInterval(clock);
             generateLoss();
         }
@@ -62,15 +65,15 @@ $(document).ready(function () {
 
 function generateLossDueToTimeOut() {
     unansweredAnswer++;
-    gameHTML = "<div class='logo'><h2 class='text-center timer-p'>Time Remaining: <span class='timer'>" +
-        counter + "</span></h2>" + "<p class='text-center'>You ran out of time!<br />  The correct answer was:<br />" +
+    gameHTML = "<div class='logo'><p class='text-center timer-p'>Time Remaining: <span class='timer'>" +
+        counter + "</span></p>" + "<p class='text-center'>You ran out of time!<br />  The correct answer was:<br />" +
         correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='assets/images/x.png'>";
     $(".mainArea").html(gameHTML);
     setTimeout(wait, 4000);
 }
 function generateWin() {
     correctAnswer++;
-    gameHTML = "<div class='logo'><h2 class='text-center timer-p'>Time Remaining: <span class='timer'>" +
+    gameHTML = "<div class='logo'><p class='text-center timer-p'>Time Remaining: <span class='timer'>" +
         counter + "</span></p>" + "<p class='text-center'>Correct!<br />  The answer is:</br> " +
         correctAnswersArray[questionCounter] + "</p>" + imageArray[questionCounter];
     $(".mainArea").html(gameHTML);
@@ -79,8 +82,8 @@ function generateWin() {
 // Wrong answer
 function generateLoss() {
     incorrectAnswer++;
-    gameHTML = "<div class='logo'><h2 class='text-center timer-p'>Time Remaining:<br/> <span class='timer'>" +
-        counter + "</span></h2>" + "<p class='text-center'><span class='text-large text-orange'>Wrong!</span><br /> The correct answer is: " +
+    gameHTML = "<div class='logo'><p class='text-center timer-p'>Time Remaining:<br/> <span class='timer'>" +
+        counter + "</span></p>" + "<p class='text-center'><span class='text-large text-orange'>Wrong!</span><br /> The correct answer is: " +
         correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='assets/images/x.png'>";
     $(".mainArea").html(gameHTML);
     setTimeout(wait, 4000);
