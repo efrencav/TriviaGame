@@ -108,8 +108,8 @@ $(document).ready(function () {
         // console.log(correctAnswersArray[questionCounter]);
         clickSound.play();
         selectAnswer = $(this).text();
-        if(selectAnswer[questionCounter].indexOf(correctAnswersArray === 0 )) { // This use to be like this (selectAnswer === correctAnswersArray[questionCounter])  This gives me an error (correctAnswersArray[questionCounter].indexOf(selectAnswer => 0))
-            console.log("correct");
+        if(correctAnswersArray[questionCounter].indexOf(selectAnswer) > 0) { // This use to be (selectAnswer === correctAnswersArray[questionCounter])  This gives me an error (correctAnswersArray[questionCounter].indexOf(selectAnswer => 0))
+            console.log(correctAnswersArray[questionCounter].indexOf(selectAnswer));
 
             SoundRight.play();
             clearInterval(clock);
