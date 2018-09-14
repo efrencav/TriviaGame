@@ -56,13 +56,13 @@ var correctAnswersArray = ["<h3 class='text-black text-center padding-10px-botto
 var imageArray = ["<img class='center-block img-wrong' src='assets/images/vanilla-ice.jpg'>",
     "<img class='center-block img-wrong' src='assets/images/The-Rangers-mighty-morphin-power-rangers.jpg'>",
     "<img class='center-block img-wrong' src='assets/images/TLC.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/bad-boy-records.jpg'>",
     "<img class='center-block img-wrong' src='assets/images/Jessica-simpson.jpg'>",
     "<img class='center-block img-wrong' src='assets/images/alicia-silverstone.jpg'>",
     "<img class='center-block img-wrong' src='assets/images/Jonbenet.jpg'>",
     "<img class='center-block img-wrong' src='assets/images/Detroit-Pistons-Logo.jpg'>",
     "<img class='center-block img-wrong' src='assets/images/the-cardigans.jpg'>",
     "<img class='center-block img-wrong' src='assets/images/ben-affleck-matt-damon.jpg'>",
-    "<img class='center-block img-wrong' src='assets/images/bad-boy-records.jpg'>",
     "<img class='center-block img-wrong' src='assets/images/south-park.jpg'>",
     "<img class='center-block img-wrong' src='assets/images/28-days-later.jpg'>",
     "<img class='center-block img-wrong' src='assets/images/whitneyhouston.jpg'>",
@@ -104,7 +104,7 @@ $(document).ready(function () {
     }); // Closes start-button click
 
     $("body").on("click", ".answer", function (event) { //This function is not processing the select answer for the correct answers, it only plays the wrong answers
-        correctAnswersArray = true;
+        // correctAnswersArray = true;
         // console.log(correctAnswersArray[questionCounter]);
         clickSound.play();
         selectAnswer = $(this).text();
