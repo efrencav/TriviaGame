@@ -53,21 +53,21 @@ var correctAnswersArray = ["<h3 class='text-black text-center padding-10px-botto
     "<h3 class='text-black text-center padding-10px-bottom padding-10px-top'><strong>B. Billy Ray Cyrus</strong></h3><br/><p class='text-center'>Billy Ray Cyrus had great success with his song 'Achy Breaky Heart.' He starred in the PAX TV series 'Doc'.</p>"];
 
 // Images array
-var imageArray = ["<img class='center-block' src='assets/images/vanilla-ice.jpg'>",
-    "<img class='center-block' src='assets/images/The-Rangers-mighty-morphin-power-rangers.jpg'>",
-    "<img class='center-block' src='assets/images/TLC.jpg'>",
-    "<img class='center-block' src='assets/images/bad-boy-records.jpg'>",
-    "<img class='center-block' src='assets/images/Jessica-simpson.jpg'>",
-    "<img class='center-block' src='assets/images/alicia-silverstone.jpg'>",
-    "<img class='center-block' src='assets/images/Jonbenet.jpg'>",
-    "<img class='center-block' src='assets/images/Detroit-Pistons-Logo.jpg'>",
-    "<img class='center-block' src='assets/images/the-cardigans.jpg'>",
-    "<img class='center-block' src='assets/images/ben-affleck-matt-damon.jpg'>",
-    "<img class='center-block' src='assets/images/south-park.jpg'>",
-    "<img class='center-block' src='assets/images/28-days-later.jpg'>",
-    "<img class='center-block' src='assets/images/whitneyhouston.jpg'>",
-    "<img class='center-block' src='assets/images/the-little-mermaid.jpg'>",
-    "<img class='center-block' src='assets/images/billy-ray-cyrus.jpg'>"];
+var imageArray = ["<img class='center-block img-wrong' src='assets/images/vanilla-ice.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/The-Rangers-mighty-morphin-power-rangers.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/TLC.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/Jessica-simpson.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/alicia-silverstone.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/Jonbenet.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/Detroit-Pistons-Logo.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/the-cardigans.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/ben-affleck-matt-damon.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/bad-boy-records.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/south-park.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/28-days-later.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/whitneyhouston.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/the-little-mermaid.jpg'>",
+    "<img class='center-block img-wrong' src='assets/images/billy-ray-cyrus.jpg'>"];
 
 var questionCounter = 0;
 var counter = 30;
