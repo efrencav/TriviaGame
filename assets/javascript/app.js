@@ -108,7 +108,7 @@ $(document).ready(function () {
         // console.log(correctAnswersArray[questionCounter]);
         clickSound.play();
         selectAnswer = $(this).text();
-        if(selectAnswer === correctAnswersArray[questionCounter]) {
+        if(selectAnswer[questionCounter].indexOf(correctAnswersArray === 0 )) { // This use to be like this (selectAnswer === correctAnswersArray[questionCounter])  This gives me an error (correctAnswersArray[questionCounter].indexOf(selectAnswer => 0))
             console.log("correct");
 
             SoundRight.play();
@@ -116,7 +116,7 @@ $(document).ready(function () {
             generateWin();
         }
         else {
-            // alert("wrong answer!");
+            console.log("wrong answer!");
             SoundWrong.play();
             clearInterval(clock);
             generateLoss();
@@ -137,7 +137,7 @@ function generateLossDueToTimeOut() {
         correctAnswersArray[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='assets/images/x.png'>";
     
         $(".mainArea").html(gameHTML);
-    setTimeout(wait, 4000); //Current time in secondst
+    setTimeout(wait, 4000); //Current time in seconds
 }
 function generateWin() {
     correctAnswer++;
