@@ -19,7 +19,7 @@ body {
 }
 
 .timer-p {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .answer:hover {
@@ -35,22 +35,30 @@ body {
 }
 
 .img-wrong {
-  margin-top: 40px;
+  margin-top: 20px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .first-answer { 
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .reset-button {
-  margin-top: 40px;
+  margin-top: 20px;
+  background-image: url("../images/play-button.png");
+  background-repeat: no-repeat;
+  height: 116px;
+  width: 228px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 }
 
 .summary-correct {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 /*
@@ -91,14 +99,32 @@ h6 {font-size:20px; line-height:26px;}
 .bg-green {background-color: #469700;}
 .bg-outter-shadow {box-shadow: inset 0 0 15rem rgba(0, 0, 0, .75);}
 .bg-spiral {
-  background-image: url("../images/spiral-bg-2560x1440.png");
-  background-repeat: no-repeat;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  height: auto;
+  background-image:url("../images/spiral-bg-2560x1440.png");
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
 }
+/* @media (min-width: 1920px) {
+  .bg-spiral {
+    background-image: url("../images/spiral-bg-1920x1280.png");
+  }
+@media (min-width: 1680px) {
+  .bg-spiral {
+    background-image: url("../images/spiral-bg-1680x1050.png");
+  }
+@media (min-width: 1440px) {
+  .bg-spiral {
+    background-image: url("../images/spiral-bg-1440x900.png");
+  }  
+@media (min-width: 325px) {
+  .bg-spiral {
+    background-image: url("../images/spiral-bg-325x667.png");
+  }  
+@media (min-width: 320px) {
+  .bg-spiral {
+    background-image: url("../images/spiral-bg-320x568.png");
+  }      
+} */
 
 
 
@@ -111,6 +137,7 @@ h6 {font-size:20px; line-height:26px;}
   margin-left: auto;
   margin-right: auto;
 }
+  
 
 /* Backgrounds with images */
 .headerBg {background-image: url("http://www.efren-cavazos.com/unit-4-game/assets/images/header-bg.jpg");
@@ -121,18 +148,19 @@ h6 {font-size:20px; line-height:26px;}
 /* Logo */
 .logo {background-image: url("../images/intro-logo.png");
   background-repeat: no-repeat;
-  height: 310px;
+  height: 341px;
   width: 500px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 50px;
 }
 
 /* Logo */
-.logoHorizontal {background-image: url("../images/intro-logo-300x120.png");
+.logoHorizontal {background-image: url("../images/intro-logo-inner.png");
   background-repeat: no-repeat;
-  height: 120px;
-  width: 300px;
+  height: 200px;
+  width: 323px;
   display: block;
   margin-left: auto;
   margin-right: auto;

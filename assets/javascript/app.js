@@ -16,16 +16,19 @@ var questionArray = ["<span class='text-black text-large'>Question 1</span><br/>
     '<span class="text-black text-large">Question 12</span><br/><p class"text-center">Which movie did NOT star actor Brad Pitt?</p>',
     '<span class="text-black text-large">Question 13</span><br/><p class"text-center">Who sang the "Star Spangled Banner" at the Super Bowl XXV?</p>',
     '<span class="text-black text-large">Question 14</span><br/><p class"text-center">The 1990s was a golden age for modern Disney movies. Which Disney Movie did NOT debut in the 90s?</p>',
-    '<span class="text-black text-large">Question 15</span><br/><p class"text-center">Country Music became very big in the 90s. Which country music star had a popular television show on "PAX TV"?</p>'];
+    '<span class="text-black text-large">Question 15</span><br/><p class"text-center">Country Music became very big in the 90s. Which country music star had a popular television show on "PAX TV"?</p>'
+];
 
-    // Answer options array
+// Answer options array
 var answerArray = [
     ["Kriss Kross", "MC Hammer", "Vanilla Ice", "DJ Jazzy Jeff and the Fresh Prince"],
     ["Saved By the Bell", "The Mighty Morphin Power Rangers", "Beverly Hills 90210", "All That"],
-    ["TLC", "Envogue", "Destiny's Child", "3LW"], ["Motown", "Death Row", "Murder Inc.", "Bad Boy"],
+    ["TLC", "Envogue", "Destiny's Child", "3LW"],
+    ["Motown", "Death Row", "Murder Inc.", "Bad Boy"],
     ["Jessica Simpson", "JC Chasez", "Britney Spears", "Justin Timberlake"],
     ["Stacey Dash", "Elisa Donovan", "Donald Faison", "Alicia Silverstone"],
-    ["1995", "1996", "1998", "1997"], ["Los Angeles Lakers", "Detroit Pistons", "Houston Rockets", "San Antonio Spurs"],
+    ["1995", "1996", "1998", "1997"],
+    ["Los Angeles Lakers", "Detroit Pistons", "Houston Rockets", "San Antonio Spurs"],
     ["The Cardigans", "The Corrs", "Chumbawumba", "Was Not Was"],
     ["Ben Stiller and Owen Wilson", "Jim Carey and Will Smith", "Demi Moore and Bruce Willis", "Ben Affleck and Matt Damon"],
     ['"Screw you guys...I&#8217;m going home."', "You are dead ducks boys!", "Oh no silly gooses!", "Kick it and kick it good."],
@@ -46,11 +49,12 @@ var correctAnswersArray = ['<h6 class="text-center">C. Vanilla Ice</h6><br/><p c
     '<h6 class="text-center">B. Detroit Pistons</h6><br/><p class="text-center">The Detroit Pistons won in 1990. The Houston Rockets won in 1994 and 1995. The San Antonio Spurs won in 1999. All the other championships won in the 90s were by the Chicago Bulls.</p>',
     '<h6 class="text-center">A. The Cardigans</h6><br/><p class="text-center">"Lovefool" was featured in the hit movie "Romeo & Juliet" starring Leonardo DiCaprio and Claire Danes.</p>',
     '<h6 class="text-center">D. Ben Affleck and Matt Damon</h6><br/><p class="text-center">Ben Affleck and Matt Damon also starred in "Good Will Hunting".</p>',
-    '<h6 class="text-center">A. "Screw you guys...I&#8217;m going home.</h6><br/><p class="text-center">When Kyle plays with his little brother Ike, they play a game called Kick the Baby.</p>',
+    '<h6 class="text-center">A. "Screw you guys...I&#8217;m going home."</h6><br/><p class="text-center">When Kyle plays with his little brother Ike, they play a game called Kick the Baby.</p>',
     '<h6 class="text-center">A. 28 Days</h6><br/><p class="text-center">"28 Days" starred Sandra Bullock.</p>',
     '<h6 class="text-center">D. Whitney Houston</h6><br/><p class="text-center">Whitney Houston&#8217;s edition of the "Star Spangled Banner" is one of the most popular renditions of the song.</p>',
     '<h6 class="text-center">A. The Little Mermaid</h6><br/><p class="text-center">"The Little Mermaid" debuted in 1989.</p>',
-    '<h6 class="text-center">B. Billy Ray Cyrus</h6><br/><p class="text-center">Billy Ray Cyrus had great success with his song "Achy Breaky Heart." He starred in the PAX TV series "Doc".</p>'];
+    '<h6 class="text-center">B. Billy Ray Cyrus</h6><br/><p class="text-center">Billy Ray Cyrus had great success with his song "Achy Breaky Heart." He starred in the PAX TV series "Doc".</p>'
+];
 
 // Images array and credit to https://giphy.com/
 var imageArray = ["<iframe src='https://giphy.com/embed/QUlNta4nHaukM' width='480' height='359' frameBorder='0' class='giphy-embed center-block img-wrong' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/80s-vanilla-ice-baby-QUlNta4nHaukM'></p>",
@@ -67,7 +71,8 @@ var imageArray = ["<iframe src='https://giphy.com/embed/QUlNta4nHaukM' width='48
     "<iframe src='https://giphy.com/embed/T77ZhoPrqcSeA' width='480' height='257' frameBorder='0' class='giphy-embed center-block img-wrong' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/28-days-later-tw-blood-T77ZhoPrqcSeA'></p>",
     "<iframe src='https://giphy.com/embed/AYhe3KfVeASAg' width='480' height='264' frameBorder='0' class='giphy-embed center-block img-wrong' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/whitney-houston-AYhe3KfVeASAg'></p>",
     "<iframe src='https://giphy.com/embed/3fe9Bw3Ej4GTS' width='480' height='247' frameBorder='0' class='giphy-embed center-block img-wrong' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/disney-the-little-mermaid-ariel-3fe9Bw3Ej4GTS'></p>",
-    "<iframe src='https://giphy.com/embed/xUPGcilIfnyYhZq7kI' width='480' height='372' frameBorder='0' class='giphy-embed center-block img-wrong' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/cmt-mullet-billy-ray-cyrus-xUPGcilIfnyYhZq7kI'></p>"];
+    "<iframe src='https://giphy.com/embed/xUPGcilIfnyYhZq7kI' width='480' height='372' frameBorder='0' class='giphy-embed center-block img-wrong' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/cmt-mullet-billy-ray-cyrus-xUPGcilIfnyYhZq7kI'></p>"
+];
 
 var questionCounter = 0;
 var counter = 30;
@@ -86,7 +91,7 @@ var SoundWrong = new Audio("assets/sound/wrong.mp3");
 $(document).ready(function () {
 
     function initialScreen() {
-        startScreen = "<div class='logo'></div><div class='play-btn start-button' href='#' role='button'></div></p>";
+        startScreen = "<div class='padding-50px-top logo'></div><div class='play-btn start-button' href='#' role='button'></div></p>";
         $(".mainArea").html(startScreen);
     }
 
@@ -103,19 +108,18 @@ $(document).ready(function () {
 
     }); // Closes start-button click
 
-    $("body").on("click", ".answer", function (event) { 
+    $("body").on("click", ".answer", function (event) {
         // correctAnswersArray = true;
         // console.log(correctAnswersArray[questionCounter]);
         clickSound.play();
         selectAnswer = $(this).text();
-        if(correctAnswersArray[questionCounter].indexOf(selectAnswer) > 0) { 
-            console.log(correctAnswersArray[questionCounter].indexOf(selectAnswer));
+        if (correctAnswersArray[questionCounter].indexOf(selectAnswer) > 0) {
+            // console.log(correctAnswersArray[questionCounter].indexOf(selectAnswer));
 
             SoundRight.play();
             clearInterval(clock);
             generateWin();
-        }
-        else {
+        } else {
             //console.log("wrong answer!");
             SoundWrong.play();
             clearInterval(clock);
@@ -132,34 +136,36 @@ $(document).ready(function () {
 
 function generateLossDueToTimeOut() {
     unansweredAnswer++;
-    gameHTML = "<p class='logo'><p class='text-center timer-p'>Time Remaining: <span class='timer'>" +
+    gameHTML = "<p class='logoHorizontal'><p class='timer-p text-center'>Time Remaining: <span class='timer'>" +
         counter + "</span></p>" + "<p class='text-white text-center'>You ran out of time! The correct answer was:<br /> " +
-        correctAnswersArray[questionCounter] + "</p>" + "<iframe src='https://giphy.com/embed/hPPx8yk3Bmqys' width='480' height='435' frameBorder='0' class='giphy-embed center-block img-wrong' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/request-donald-wrong-hPPx8yk3Bmqys'></p>";
-    
-        $(".mainArea").html(gameHTML);
+        correctAnswersArray[questionCounter] + "</p>" + "<iframe src='https://giphy.com/embed/3ornjXizVZDbngmjRK' width='480' height='480' frameBorder='0' class='giphy-embed center-block img-wrong' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/captainobvious-3ornjXizVZDbngmjRK'></p>";
+
+    $(".mainArea").html(gameHTML);
     setTimeout(wait, 4000); //Current time in seconds
 }
+
 function generateWin() {
     correctAnswer++;
-    gameHTML = "<p class='logo'><p class='text-center timer-p text-medium'>Time Remaining: <span class='timer'>" +
-        counter + "</span></p>" + "<p class='text-white text-center'>Correct! The answer is: " +
+    gameHTML = "<p class='logoHorizontal'><p class='text-center timer-p text-medium'>Time Remaining: <span class='timer'>" +
+        counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " +
         correctAnswersArray[questionCounter] + "</p>" + imageArray[questionCounter];
-    
-        $(".mainArea").html(gameHTML);
-    setTimeout(wait, 5000); //Current time in seconds
+
+    $(".mainArea").html(gameHTML);
+    setTimeout(wait, 4000); //Current time in seconds
 }
 // Wrong answer
 function generateLoss() {
     incorrectAnswer++;
-    gameHTML = "<p class='logo'><p class='text-center timer-p text-medium'>Time Remaining: <span class='timer'>" +
-        counter + "</span></p>" + "<p class='text-white text-center'><strong>Wrong!</strong><br />The correct answer is: " +
+    gameHTML = "<p class='logoHorizontal'><p class='text-center timer-p text-medium'>Time Remaining: <span class='timer'>" +
+        counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: " +
         correctAnswersArray[questionCounter] + "</p>" + "<iframe src='https://giphy.com/embed/hPPx8yk3Bmqys' width='480' height='435' frameBorder='0' class='giphy-embed center-block img-wrong' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/request-donald-wrong-hPPx8yk3Bmqys'></p>";
 
     $(".mainArea").html(gameHTML);
-    setTimeout(wait, 5000); //Current time in seconds
+    setTimeout(wait, 4000); //Current time in seconds
 }
+
 function generateHTML() {
-    gameHTML = "<p class='logo'><p class='text-center timer-p'><strong>Time Remaining: <span class='timer text-white'>30</strong></span></p><p class='text-center'>" +
+    gameHTML = "<p class='logoHorizontal'><p class='timer-p'>Time Remaining: <span class='timer'>30</span></p><p>" +
         questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " +
         answerArray[questionCounter][0] + "</p><p class='answer'>B. " +
         answerArray[questionCounter][1] + "</p><p class='answer'>C. " +
@@ -168,19 +174,21 @@ function generateHTML() {
 
     $(".mainArea").html(gameHTML);
 }
+
 function wait() {
     if (questionCounter < 14) {
         questionCounter++;
         generateHTML();
         counter = 30;
         timeWrapper();
-    }
-    else {
+    } else {
         finalScreen();
     }
 }
+
 function timeWrapper() {
     clock = setInterval(thirtySeconds, 1000);
+
     function thirtySeconds() {
         if (counter === 0) {
             clearInterval(clock);
@@ -192,14 +200,15 @@ function timeWrapper() {
         $(".timer").html(counter);
     }
 }
+
 function finalScreen() {
-    gameHTML = "<p class='logo'></div><p class='text-center timer-p'>Time Remaining: " +
-        counter + "</p>" + "<p class='text-center timer-p'>All done, here's how you did!" +
+    gameHTML = "<p class='logo'><p class='text-center timer-p'>All done, here's how you did!" +
         "</p>" + "</p><p class='summary-correct text-center'>Correct Answers: " + correctAnswer +
         "</p>" + "<p class='text-center timer-p'>Wrong Answers: " + incorrectAnswer; + "</p>" +
         "<p class='text-center timer-p'>Unanswered: " + unansweredAnswer; + "</p>" +
-            "<p class='text-center timer-p reset-button-container'><div class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'></div>";
-        
+        "<p class='text-center timer-p reset-button-container'>" +
+        "<div class='play-btn start-button' href='#' role='button'></div>";
+
     $(".mainArea").html(gameHTML);
 }
 
@@ -212,4 +221,3 @@ function resetGame() {
     generateHTML();
     timeWrapper();
 }
-
